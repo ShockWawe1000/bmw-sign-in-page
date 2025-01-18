@@ -1,0 +1,431 @@
+
+
+/*
+
+*{
+  border:red 1px solid;
+}
+*/
+
+
+
+
+
+*{
+    font-family: Roboto;
+  
+    margin: 0;
+    padding: 0;
+}
+
+:Root{
+   --dark-blue: #0d2742;
+   --light-blue:  #0066b3;
+}
+body{
+    display: grid;
+    min-height:100vh;
+    grid-template-columns: minmax(320px, 350px) 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+    "sidebar nav"
+    "sidebar main"
+    "footer footer";
+}
+
+/* Navbar */
+nav{ z-index: 3;
+   grid-area: nav;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 80px 1fr ;
+   height: auto;
+   grid-auto-flow: row ;
+   border-bottom: solid 0px ;
+   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.mobile-nav-btn , .mobile-close-btn{
+   display: none;
+}
+
+.mobile-close-btn{
+
+padding-right: 40px;
+}
+
+
+.search-div , .personal-div, .personal-info, .buttons{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+}
+.search-div, .personal-info{
+   justify-content: start;
+}
+
+.personal-div , .buttons{
+   justify-content: end;
+}
+
+.svg-icon{
+   width: 40px;
+   height: 40px;
+ 
+}
+
+.svg-nav {
+   width: 35px;
+   height: 35px;
+   padding-left: 20px;
+}
+.svg-close{
+   width: 50px;
+   height: 50px;
+   padding-right: 20px;
+}
+
+button{
+   border: 0px;
+   background-color: #ffffff00;
+}
+
+
+.search-bar{
+   width: clamp(200px, 60%, 550px);
+   height: 30px;
+   border-radius: 15px;
+   background-color: #0d274225;
+   border: 0px;
+}
+.search-bar:focus{
+   border:  1px  var(--light-blue) solid;
+}
+.search-btn , .notification-btn{
+   margin:  0px 30px;
+ 
+   width: 50px;
+   height: 50px;
+}
+.search-btn:hover , .notification-btn:hover{
+   border-top-left-radius: 50% 50%; border-top-right-radius: 50% 50%; border-bottom-right-radius: 50% 50%; border-bottom-left-radius: 50% 50%;
+   background-color: #4747471e;
+}
+
+.pfp{
+   width: 40px;
+   height: 40px;
+   padding: 15px;
+   
+   border-top-left-radius: 50% 50%; border-top-right-radius: 50% 50%; border-bottom-right-radius: 50% 50%; border-bottom-left-radius: 50% 50%;
+}
+
+.pfp-large{
+   width: 70px;
+   height: 70px;
+   margin: 0px 10px 15px 15px;
+}
+
+.name{
+   font-size: 23px;
+   padding: 15px 30px;
+   color: var(--dark-blue);
+}
+
+
+.main-buttons{
+   padding: 15px 40px;
+   background-color: #1e85d3;
+   border-radius: 25px;
+   color:   white;
+   font-weight: 800;
+   margin: 20px 20px;
+   font-size: 16px;
+
+}
+
+.greet , .name-big {
+   font-weight: bold;
+   color: var(--dark-blue);
+}
+.name-big{
+   font-size: 30px;
+}
+
+
+
+
+
+
+
+/* Sidebar */
+ aside{
+   z-index: 199;
+    grid-area: sidebar;
+    position:sticky;
+    top:0px;
+    align-self: start;
+    height:100vh;
+   color:white;
+    background-color: #0d2742;
+ }
+
+.title-container{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+.title-div{
+   display: flex;
+   align-items: center;
+}
+
+
+
+ .logo-img{
+   width: 50px;
+   height: 50px;
+   padding:30px 0px;
+   margin: 0px 20px 0px 40px;
+   
+ }
+
+ .title-container h1{
+   font-weight: bolder;
+   font-size: 22px;
+ }
+
+ .links-container{
+   padding: 20px 0px;
+ }
+
+
+
+.links{
+   display: flex;
+   margin: 15px 0px;
+   align-items: center;
+}
+ .icon{
+   width: 50px;
+   height: 50px;
+   margin: 0px 20px 0px 40px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+
+.filter-white{
+   width: 30px;
+   height: 30px;
+}
+
+
+
+
+
+/* Main */
+
+ main{
+   z-index: 1;
+   display: grid;
+    grid-area: main;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "projects news"
+    "projects trending"
+    ;
+    background-color: rgb(238, 240, 241);
+    color: var(--dark-blue);
+ }
+
+ .projects{
+   grid-area: projects;
+ }
+
+ .project-cards{
+
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+   grid-template-rows: 1fr 1fr 1fr;
+   gap:30px;
+   justify-items: center;
+   padding: 10px 25px;
+
+ }
+ .card{
+   width: 400px;
+   height: 230px;
+   background-color: white;
+   border-radius: 15px;
+   border-left: #0d2742 12px solid;
+   display: flex;
+   flex-direction: column;
+   align-items: start;
+   justify-content: space-between;
+   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+ }
+
+ .card h3{
+   padding: 15px 15px  5px;
+ }
+ .card p{
+   padding: 5px 10px 15px 15px;
+  
+ }
+
+ .news{
+   grid-area: news;
+ }
+
+ .news-card{
+   background-color: white;
+   border-radius: 15px;
+   padding: 10px 30px;
+    margin:20px 30px 20px 20px;
+   flex-direction: column;
+   align-items: start;
+   justify-content: space-between;
+   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+ }
+
+.news-article{
+border-bottom: 1px solid rgb(177, 177, 177);
+padding-top: 20px;
+padding-bottom: 20px;
+}
+.news-article.last{
+   border-bottom:0px;
+}
+.news-article p {
+   font-size: 15px;
+   color: #696666;
+}
+ .buttons-card-div{
+  
+   display: flex;
+   align-self: flex-end;
+ }
+.buttons-card{
+   z-index: 2;
+   width: 30px;
+   margin:20px;
+}
+
+
+
+ .trending{
+   grid-area: trending;
+ }
+.trending-article{
+   display: flex;
+   flex-direction: row;
+   justify-content: start;
+   align-items: center;
+   padding: 20px 10px;
+}
+
+ .pfp-news{
+   height: 50px;
+   width: 50px;
+   border-top-left-radius: 50% 50%; border-top-right-radius: 50% 50%; border-bottom-right-radius: 50% 50%; border-bottom-left-radius: 50% 50%;
+   
+}
+
+.name-news{
+padding-left: 20px;
+}
+ .title{
+   margin: 30px 0px 10px 25px;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ @media(max-width:1190px) and (min-width: 801px){
+   body{
+      grid-template-columns: minmax(0px, 0px) 1fr;
+   }
+   aside{
+      position:fixed;
+      width:80%;
+      display: none;
+      
+   }
+   .mobile-nav-btn , .mobile-close-btn{
+      display: block;
+   }
+   .show{
+      display: block;
+   }
+
+   main{
+  
+       grid-template-columns: 3fr 2fr;
+   }
+   
+ }
+
+
+
+ @media (max-width:800px){
+   nav{
+      grid-area: nav;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 80px 1fr ;
+      height: auto;
+      
+   }
+   .search-div , .personal-div, .personal-info, .buttons{
+      justify-content: center;
+   }
+
+   body{
+      grid-template-columns: minmax(0px, 0px) 1fr;
+   
+   }
+
+   .personal-div{
+      display: none;
+   }
+   aside{
+      position:fixed;
+      width:100%;
+      display: none;
+      
+   }
+   .mobile-nav-btn , .mobile-close-btn{
+      display: block;
+   }
+   .show{
+      display: block;
+   }
+   main{
+ 
+      grid-template-columns:  1fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+      "projects "
+      "news "
+      "trending" ;
+
+   }
+ 
+ }

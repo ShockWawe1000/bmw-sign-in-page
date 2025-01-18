@@ -3,6 +3,7 @@
    
     font-family: Roboto;
     color:azure;
+
   
 }
 
@@ -18,6 +19,15 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+
+.main-box{
+color:wheat;
+  display: grid;
+  grid-template-columns: 1fr 50fr;
+  align-items: center;    
+
 }
 
 .imageDiv{
@@ -77,20 +87,22 @@ z-index: 2;
 }
 
 .poster{
-    height: 188%;
+  z-index: 100;
+    height: 80%;
 }
 
 
 .registerDiv
-{position:relative;
+{
+  position:relative;
  z-index: 99;
 display: flex;
 flex-direction: column;
 justify-content: center;
-padding: 160px;
+padding: 90px;
 background-color: black;
 flex:2;
-height: 188%;
+height: 80%;
 }
 
 .bmw-min{
